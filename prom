@@ -1,2 +1,3 @@
 msiexec /i windows_exporter-0.18.1-amd64.msi ENABLED_COLLECTORS=iis,cpu,cs,logical_disk,memory,net,os,service,system,textfile
 ,mssql
+https://github.com/prometheus-community/windows_exporter/releases/download/v0.18.1/windows_exporter-0.18.1-amd64.msi 
