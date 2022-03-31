@@ -23,3 +23,36 @@ https://github.com/prometheus-community/windows_exporter/releases/download/v0.18
       stages:
       - labeldrop:
           - filename
+- job_name: windows
+  windows_events:
+    use_incoming_timestamp: false
+    bookmark_path: "./bookmark.xml"
+    eventlog_name: "Security"
+    xpath_query: '*'
+    labels:
+      job: windows
+  relabel_configs:
+    - source_labels: ['computer']
+      target_label: 'host'
+- job_name: windows
+  windows_events:
+    use_incoming_timestamp: false
+    bookmark_path: "./bookmark2.xml"
+    eventlog_name: "Application"
+    xpath_query: '*'
+    labels:
+      job: windows
+  relabel_configs:
+    - source_labels: ['computer']
+      target_label: 'host'
+- job_name: windows
+  windows_events:
+    use_incoming_timestamp: false
+    bookmark_path: "./bookmark3.xml"
+    eventlog_name: "System"
+    xpath_query: '*'
+    labels:
+      job: windows
+  relabel_configs:
+    - source_labels: ['computer']
+      target_label: 'host'
