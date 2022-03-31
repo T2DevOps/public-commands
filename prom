@@ -10,7 +10,7 @@ https://github.com/prometheus-community/windows_exporter/releases/download/v0.18
       stages:
       - regex:
           source: filename
-          expression:  'D:\\\S{4}\\(?P<customer>\S*)\\(?P<service>\S*)\\(?P<type>\S*)\\'
+          expression: 'D\:\\Logs\\(?P<customer>\w+)\\(?P<service>\w+)\\(?P<type>\w+)\\.*'
       - labels:
           logname:
       - labeldrop:
